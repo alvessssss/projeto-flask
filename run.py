@@ -8,8 +8,13 @@ from app.routes.product_routes import product_bp
 app = Flask(__name__)
 app.config.from_object(Config)
 
+
 db.init_app(app)
 jwt = JWTManager(app)
+
+@app.route("/")
+def home():
+    return "API rodando "
 
 app.register_blueprint(auth_bp)
 app.register_blueprint(product_bp)
