@@ -50,7 +50,11 @@ def login():
     additional_claims={"role": user.role}
     )
 
-    return jsonify(access_token=token), 200
+    return jsonify({
+    "message": "Login realizado com sucesso",
+    "access_token": token
+}), 200
+
 
 
 
